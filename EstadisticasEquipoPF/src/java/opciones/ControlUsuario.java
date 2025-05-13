@@ -29,7 +29,7 @@ public class ControlUsuario {
    public static List<Usuario> obtenerTodos() {
     List<Usuario> usuarios = new ArrayList<>();
     coleccion.find().into(usuarios);
-    System.out.println("Usuarios: " + usuarios.size()); // Verifica si hay usuarios en la base de datos
+    System.out.println("Usuarios: " + usuarios.size()); 
     return usuarios;
 }
 

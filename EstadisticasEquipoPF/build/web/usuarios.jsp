@@ -55,7 +55,7 @@
                 usuarioEditado = null;
             }
 
-            lista = ControlUsuario.obtenerTodos(); // Recargar lista actualizada
+            lista = ControlUsuario.obtenerTodos(); 
         }
     %>
 
