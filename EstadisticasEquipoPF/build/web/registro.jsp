@@ -7,21 +7,30 @@
 <%@page import="opciones.ControlUsuario"%>
 <%@page import="opciones.Usuario"%>
 <%@ page contentType="text/html;charset=UTF-8" %>
+<!DOCTYPE html>
 <html>
-<head><title>Registro</title></head>
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Usuario</title>
+</head>
 <body>
-    <h2>Registrar nuevo usuario</h2>
+    <h2>Registrar Nuevo Usuario</h2>
     <form method="POST">
-        Usuario: <input type="text" name="usuario" required><br>
-        Correo: <input type="email" name="correo" required><br>
-        Contraseña: <input type="password" name="contrasena" required><br>
-        Nombre: <input type="text" name="nombre" required><br>
-        Edad: <input type="number" name="edad" min="1" required><br>
-        Tipo: 
-        <select name="tipo" required>
-            <option value="usuario">Usuario</option>
-            <option value="admin">Admin</option>
-        </select><br><br>
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" required><br><br>
+
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" required><br><br>
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required><br><br>
+
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" required><br><br>
+
         <input type="submit" value="Registrar">
     </form>
 
@@ -31,17 +40,17 @@
         String contrasena = request.getParameter("contrasena");
         String nombre = request.getParameter("nombre");
         String edadStr = request.getParameter("edad");
-        String tipo = request.getParameter("tipo");
 
-        if (usuario != null && correo != null && contrasena != null && nombre != null && edadStr != null && tipo != null) {
+        if (usuario != null && correo != null && contrasena != null && nombre != null && edadStr != null) {
             int edad = Integer.parseInt(edadStr);
-            int id = ControlUsuario.obtenerLista().size() + 1; 
-            Usuario nuevo = new Usuario(id, usuario, correo, contrasena, nombre, edad, tipo);
-            ControlUsuario.agregarUsuarios(nuevo);
+            int id = ControlUsuario.obtenerTodos().size() + 1; 
+            Usuario nuevo = new Usuario(id, usuario, correo, contrasena, nombre, edad);
+            ControlUsuario.agregarUsuario(nuevo);
             out.println("<p>¡Usuario registrado correctamente!</p>");
         }
     %>
 
-    <a href="login.jsp">Ir al login</a>
+    <p><a href="login.jsp">Ir al Login</a></p>
+    <p><a href="index.jsp">Volver al Inicio</a></p>
 </body>
 </html>

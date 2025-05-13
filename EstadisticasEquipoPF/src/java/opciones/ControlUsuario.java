@@ -4,46 +4,58 @@
  */
 package opciones;
 
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import conexion.Conexion;
 import java.util.ArrayList;
 import java.util.List;
+import org.bson.conversions.Bson;
+import static com.mongodb.client.model.Filters.eq;
+import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.Updates;
 
 /**
  *
  * @author Oley
  */
 public class ControlUsuario {
-        private static List<Usuario> listaUsuarios=new ArrayList<>();
-    static{ 
-//        listaUsuarios.add(new Usuario( 1, "Rodrigo123", "Rodrigo@yopmail.com", "Rodrigo123", "Rodrigo",18));
-        
+    private static MongoCollection<Usuario> coleccion;
+
+    static {
+        MongoDatabase db = Conexion.getDatabase();
+        coleccion = db.getCollection("usuario", Usuario.class);
     }
-    public static List<Usuario> obtenerLista(){
-        return listaUsuarios;
-    }
-    public static void agregarUsuarios(Usuario usuario){
-        listaUsuarios.add(usuario);
-    }
-     public static Usuario buscarUsuario(String usuario, String contrasena) {
-        for (Usuario u : listaUsuarios) {
-            if (u.getUsuario().equals(usuario) && u.getContraseña().equals(contrasena)) {
-                return u;
-            }
-        }
-        return null;
-    }
-     public static void eliminarUsuario(String usuario) {
-    listaUsuarios.removeIf(u -> u.getUsuario().equals(usuario));
+
+   public static List<Usuario> obtenerTodos() {
+    List<Usuario> usuarios = new ArrayList<>();
+    coleccion.find().into(usuarios);
+    System.out.println("Usuarios: " + usuarios.size()); // Verifica si hay usuarios en la base de datos
+    return usuarios;
 }
 
-     
-//    public static void main(String[] args) {
-//        Usuario usuario=new Usuario( 1, "Rodrigo123", "Rodrigo@yopmail.com", "Rodrigo123", "Rodrigo",18,"admin");
-//        agregarUsuarios(usuario);
-//        Usuario usuario1=new Usuario(2, "CarlosFreeFire", "Carlos@gmail.com", "Carlos123", "Carlos ", 21,"usuario");
-//        agregarUsuarios(usuario1);
-//        for (Usuario u: obtenerLista()) {
-//            System.out.println(u.getUsuario()+" "+ u.getContraseña());
-//        }
-//        
-//    }
+
+    public static void agregarUsuario(Usuario usuario) {
+        coleccion.insertOne(usuario);
+    }
+
+    public static void eliminarUsuario(String usuario) {
+        coleccion.deleteOne(Filters.eq("usuario", usuario));
+    }
+
+  public static void actualizarUsuario(String usuarioOriginal, Usuario nuevo) {
+    coleccion.updateOne(
+        Filters.eq("usuario", usuarioOriginal),
+        Updates.combine(
+            Updates.set("usuario", nuevo.getUsuario()),
+            Updates.set("correo", nuevo.getCorreo()),
+            Updates.set("contraseña", nuevo.getContraseña()),
+            Updates.set("nombre", nuevo.getNombre()),
+            Updates.set("edad", nuevo.getEdad())
+        )
+    );
+}
+
+        
+
+   
 }
