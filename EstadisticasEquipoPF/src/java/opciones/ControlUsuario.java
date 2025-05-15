@@ -34,9 +34,12 @@ public class ControlUsuario {
 }
 
 
-    public static void agregarUsuario(Usuario usuario) {
-        coleccion.insertOne(usuario);
-    }
+   public static void agregarUsuario(Usuario usuario) {
+    System.out.println("Agregando usuario: " + usuario.getUsuario());
+    System.out.println("Contraseña: " + usuario.getContraseña()); 
+    coleccion.insertOne(usuario);
+}
+
 
     public static void eliminarUsuario(String usuario) {
         coleccion.deleteOne(Filters.eq("usuario", usuario));

@@ -11,15 +11,13 @@ import org.bson.types.ObjectId;
  * @author Oley
  */
 public class Usuario {
-    int  id;
     String usuario;
     String correo;
     String contraseña;
     String nombre;
     int edad;
 
-    public Usuario(int id, String usuario, String correo, String contraseña, String nombre, int edad) {
-        this.id = id;
+    public Usuario(String usuario, String correo, String contraseña, String nombre, int edad) {
         this.usuario = usuario;
         this.correo = correo;
         this.contraseña = contraseña;
@@ -27,6 +25,7 @@ public class Usuario {
         this.edad = edad;
     }
 
+  
     
  
 
@@ -49,14 +48,7 @@ public class Usuario {
         return correo;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
-    public String getContraseña() {
-        return contraseña;
-    }
-
+  
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
@@ -77,13 +69,14 @@ public class Usuario {
         this.edad = edad;
     }
 
-    public int getId() {
-        return id;
+    public String getContraseña() {
+        return contraseña;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
-    
+
+   
     
 }

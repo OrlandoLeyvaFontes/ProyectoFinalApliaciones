@@ -14,10 +14,10 @@ public class Equipos {
     private String ciudad;
     private String estadio;
     private String entrenador;
-    private int fundado;
+    private String fundado;
     private String liga;
 
-    public Equipos(String nombre, String ciudad, String estadio, String entrenador, int fundado, String liga) {
+    public Equipos(String nombre, String ciudad, String estadio, String entrenador, String fundado, String liga) {
         this.nombre = nombre;
         this.ciudad = ciudad;
         this.estadio = estadio;
@@ -27,6 +27,10 @@ public class Equipos {
     }
 
     public Equipos() {
+    }
+
+    public Equipos(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getNombre() {
@@ -61,13 +65,15 @@ public class Equipos {
         this.entrenador = entrenador;
     }
 
-    public int getFundado() {
+    public String getFundado() {
         return fundado;
     }
 
-    public void setFundado(int fundado) {
+    public void setFundado(String fundado) {
         this.fundado = fundado;
     }
+
+   
 
     public String getLiga() {
         return liga;

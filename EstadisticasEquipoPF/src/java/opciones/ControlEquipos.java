@@ -24,13 +24,34 @@ public class ControlEquipos {
         coleccion = db.getCollection("equipo", Equipos.class); 
     }
 
-    public static List<Equipos> obtenerTodos() {
-        List<Equipos> equipos = new ArrayList<>();
-        coleccion.find().into(equipos); 
-        System.out.println("Equipos: " + equipos.size()); 
-        return equipos;
+//    public static List<Equipos> obtenerTodos() {
+//        List<Equipos> equipos = new ArrayList<>();
+//        coleccion.find().into(equipos); 
+//        System.out.println("Equipos: " + equipos.size()); 
+//        return equipos;
+//    }
+public static List<Equipos> obtenerTodos() {
+    System.out.println("*** INICIANDO obtenerTodos EN ControlEquipos ***");
+    List<Equipos> equipos = new ArrayList<>();
+    
+    try {
+        System.out.println("Obteniendo colección de MongoDB");
+        coleccion.find().into(equipos);
+        System.out.println("Consulta MongoDB completada. Número de equipos: " + equipos.size());
+        
+        if (!equipos.isEmpty()) {
+            Equipos primero = equipos.get(0);
+            System.out.println("Primer equipo: " + primero.getNombre() + ", " + primero.getCiudad());
+        } else {
+            System.out.println("No se encontraron equipos en la colección");
+        }
+    } catch (Exception e) {
+        System.err.println("ERROR al obtener equipos de MongoDB: " + e.getMessage());
+        e.printStackTrace();
     }
-
+    
+    return equipos;
+}
     public static void agregarEquipo(Equipos equipo) {
         coleccion.insertOne(equipo); 
     }
