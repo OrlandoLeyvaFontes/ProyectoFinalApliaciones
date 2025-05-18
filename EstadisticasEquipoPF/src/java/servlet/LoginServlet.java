@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
         String contrasena = request.getParameter("contrasena");
 
         if ("admin".equals(usuario) && "admin".equals(contrasena)) {
-            response.sendRedirect("usuarios.jsp");
+            response.sendRedirect("menuAdministrador.jsp");
             return;
         }
 

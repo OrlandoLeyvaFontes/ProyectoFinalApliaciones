@@ -24,12 +24,7 @@ public class ControlEquipos {
         coleccion = db.getCollection("equipo", Equipos.class); 
     }
 
-//    public static List<Equipos> obtenerTodos() {
-//        List<Equipos> equipos = new ArrayList<>();
-//        coleccion.find().into(equipos); 
-//        System.out.println("Equipos: " + equipos.size()); 
-//        return equipos;
-//    }
+
 public static List<Equipos> obtenerTodos() {
     System.out.println("*** INICIANDO obtenerTodos EN ControlEquipos ***");
     List<Equipos> equipos = new ArrayList<>();

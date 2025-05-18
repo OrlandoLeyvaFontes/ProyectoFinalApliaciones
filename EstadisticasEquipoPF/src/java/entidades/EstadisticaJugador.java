@@ -10,24 +10,14 @@ package entidades;
  */
 public class EstadisticaJugador {
 
-    private String nombreJugador;
+
+private String nombreJugador;
     private int goles;
     private int asistencias;
     private int minutosJugados;
     private boolean tarjetaAmarilla;
     private boolean tarjetaRoja;
 
-    public EstadisticaJugador() {
-    }
-
-    public EstadisticaJugador(String nombreJugador, int goles, int asistencias, int minutosJugados, boolean tarjetaAmarilla, boolean tarjetaRoja) {
-        this.nombreJugador = nombreJugador;
-        this.goles = goles;
-        this.asistencias = asistencias;
-        this.minutosJugados = minutosJugados;
-        this.tarjetaAmarilla = tarjetaAmarilla;
-        this.tarjetaRoja = tarjetaRoja;
-    }
 
     public String getNombreJugador() {
         return nombreJugador;
@@ -76,5 +66,4 @@ public class EstadisticaJugador {
     public void setTarjetaRoja(boolean tarjetaRoja) {
         this.tarjetaRoja = tarjetaRoja;
     }
-
 }

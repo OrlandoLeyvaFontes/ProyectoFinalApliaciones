@@ -12,6 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <a href="Equipos.jsp"> Registrar equipos</a>
+        <a href="estadisticas.jsp"> Estadisticas partido</a><br>
+        <a href="EstadisticasMayor.jsp"> Mayor de las estadisticas<a/> <br>
     </body>
 </html>

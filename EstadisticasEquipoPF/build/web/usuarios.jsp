@@ -19,14 +19,32 @@
 <body>
     <h1>Usuarios</h1>
 
+    <%
+        Usuario usuarioEditar = (Usuario) request.getAttribute("usuarioEditar");
+        boolean enEdicion = usuarioEditar != null;
+    %>
+
+    <h2><%= enEdicion ? "Editar Usuario" : "Agregar Usuario" %></h2>
+
     <form method="post" action="CrudUsuariosServlet">
-        <input type="hidden" name="accion" value="agregar" />
-        Usuario: <input type="text" name="usuario" required><br>
-        Nombre: <input type="text" name="nombre" required><br>
-        Correo: <input type="email" name="correo" required><br>
-        Contraseña: <input type="password" name="contraseña" required><br>
-        Edad: <input type="number" name="edad" required><br>
-        <button type="submit">Agregar</button>
+        <input type="hidden" name="accion" value="<%= enEdicion ? "actualizar" : "agregar" %>" />
+        <% if (enEdicion) { %>
+            <input type="hidden" name="usuarioOriginal" value="<%= usuarioEditar.getUsuario() %>" />
+        <% } %>
+
+        Usuario: <input type="text" name="usuario" value="<%= enEdicion ? usuarioEditar.getUsuario() : "" %>" required <%= enEdicion ? "readonly" : "" %>><br>
+        Nombre: <input type="text" name="nombre" value="<%= enEdicion ? usuarioEditar.getNombre() : "" %>" required><br>
+        Correo: <input type="email" name="correo" value="<%= enEdicion ? usuarioEditar.getCorreo() : "" %>" required><br>
+
+        <% if (enEdicion) { %>
+            Contraseña (dejar en blanco para mantener la actual): <input type="password" name="contraseña"><br>
+        <% } else { %>
+            Contraseña: <input type="password" name="contraseña" required><br>
+        <% } %>
+
+        Edad: <input type="number" name="edad" value="<%= enEdicion ? usuarioEditar.getEdad() : "" %>" required><br>
+
+        <button type="submit"><%= enEdicion ? "Actualizar" : "Agregar" %></button>
     </form>
 
     <br>

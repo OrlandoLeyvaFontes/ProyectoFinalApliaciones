@@ -22,7 +22,7 @@ import opciones.Usuario;
 @WebServlet(name = "CrudUsuariosServlet", urlPatterns = {"/CrudUsuariosServlet"})
 public class CrudUsuariosServlet extends HttpServlet {
 
-     @Override
+       @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -30,6 +30,7 @@ public class CrudUsuariosServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
 
         String accion = request.getParameter("accion");
+
         if ("editar".equals(accion)) {
             String usuario = request.getParameter("usuario");
             List<Usuario> usuarios = ControlUsuario.obtenerTodos();
@@ -77,14 +78,28 @@ public class CrudUsuariosServlet extends HttpServlet {
 
         } else if ("actualizar".equals(accion)) {
             String usuarioOriginal = request.getParameter("usuarioOriginal");
-            Usuario u = new Usuario();
-            u.setUsuario(request.getParameter("usuario"));
-            u.setNombre(request.getParameter("nombre"));
-            u.setCorreo(request.getParameter("correo"));
-            u.setContraseña(request.getParameter("contraseña"));
-            u.setEdad(Integer.parseInt(request.getParameter("edad")));
+            String usuario = request.getParameter("usuario");
+            String nombre = request.getParameter("nombre");
+            String correo = request.getParameter("correo");
+            String nuevaContraseña = request.getParameter("contraseña");
+            int edad = Integer.parseInt(request.getParameter("edad"));
 
-            ControlUsuario.actualizarUsuario(usuarioOriginal, u);
+            Usuario existente = ControlUsuario.buscarPorUsuario(usuarioOriginal);
+            if (existente != null) {
+                Usuario actualizado = new Usuario();
+                actualizado.setUsuario(usuario);
+                actualizado.setNombre(nombre);
+                actualizado.setCorreo(correo);
+                actualizado.setEdad(edad);
+
+                if (nuevaContraseña != null && !nuevaContraseña.isEmpty()) {
+                    actualizado.setContraseña(nuevaContraseña);
+                } else {
+                    actualizado.setContraseña(existente.getContraseña());
+                }
+
+                ControlUsuario.actualizarUsuario(usuarioOriginal, actualizado);
+            }
         }
 
         response.sendRedirect("CrudUsuariosServlet");

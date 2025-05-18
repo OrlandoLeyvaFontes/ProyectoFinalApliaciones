@@ -16,7 +16,7 @@ public class Partido {
     private Date fecha;
     private String rival;
     private String lugar;
-    private String resultado; // Ej: "3-2"
+    private String resultado; 
     private List<EstadisticaJugador> estadisticas;
 
     public Partido() {

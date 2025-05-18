@@ -3,25 +3,39 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/web/Equipos.jsp</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/web/index.jsp</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/web/login.jsp</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/web/menu.jsp</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/web/registro.jsp</file>
             <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/web/usuarios.jsp</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/conexion/Conexion.java</file>
             <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/entidades/Equipos.java</file>
-            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/entidades/Usuario.java</file>
-            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/entidades/Partido.java</file>
-            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/entidades/EstadisticaJugador.java</file>
-            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/entidades/Jugador.java</file>
             <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/opciones/ControlEquipos.java</file>
             <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/opciones/ControlJugador.java</file>
             <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/opciones/ControlPartido.java</file>
-            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/web/menu.jsp</file>
-            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/servlet/EquiposServlet.java</file>
             <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/opciones/ControlUsuario.java</file>
-            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/servlet/UsuarioServlet.java</file>
-            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/web/registro.jsp</file>
-            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/web/login.jsp</file>
-            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/servlet/LoginServlet.java</file>
-            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/web/index.jsp</file>
             <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/pruebas/MainPruebas.java</file>
-            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/web/equipos.jsp</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/servlet/CrudEquiposServlet.java</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/servlet/CrudUsuariosServlet.java</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/servlet/EquiposServlet.java</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/servlet/LoginServlet.java</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/servlet/RegistrarEquiposServlet.java</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/servlet/RegistroUsuarioServlet.java</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/web/jugador.jsp</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/servlet/RegistrarJugadorServet.java</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/servlet/RegistrarPartidoServlet.java</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/entidades/Partido.java</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/web/partido.jsp</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/servlet/ValidarNombreServlet.java</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/web/menuAdministrador.jsp</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/entidades/Usuario.java</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/entidades/EstadisticaJugador.java</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/opciones/ControlEstadisticaJugador.java</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/servlet/EstadisticasJugadorServlet.java</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/web/estadisticas.jsp</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/web/EstadisticasMayor.jsp</file>
+            <file>file:/C:/Users/Oley/Documents/GitHub/ProyectoDS/BaseDatos2024_2025/ProyectoFinalApliaciones/EstadisticasEquipoPF/src/java/servlet/EstadisticasOrdenadasServlet.java</file>
         </group>
     </open-files>
 </project-private>

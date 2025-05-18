@@ -45,7 +45,8 @@ public class ControlUsuario {
         coleccion.deleteOne(Filters.eq("usuario", usuario));
     }
 
-  public static void actualizarUsuario(String usuarioOriginal, Usuario nuevo) {
+
+public static void actualizarUsuario(String usuarioOriginal, Usuario nuevo) {
     coleccion.updateOne(
         Filters.eq("usuario", usuarioOriginal),
         Updates.combine(
@@ -58,7 +59,9 @@ public class ControlUsuario {
     );
 }
 
-        
+public static Usuario buscarPorUsuario(String usuario) {
+    return coleccion.find(eq("usuario", usuario)).first();
+}
 
    
 }
