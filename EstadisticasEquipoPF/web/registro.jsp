@@ -6,39 +6,53 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
+
+<div class="contenedor">
     <h2>Registrar Nuevo Usuario</h2>
 
-    <!-- Mostrar el mensaje de éxito si está presente -->
-    <c:if test="${not empty mensaje}">
-        <p style="color: green;">${mensaje}</p>
-    </c:if>
+    <% 
+        String mensaje = (String) request.getAttribute("mensaje");
+        String error = (String) request.getAttribute("error");
+        if (mensaje != null && !mensaje.isEmpty()) {
+    %>
+        <p class="mensaje-exito"><%= mensaje %></p>
+    <% 
+        } 
+        if (error != null && !error.isEmpty()) {
+    %>
+        <p class="mensaje-error"><%= error %></p>
+    <% } %>
 
-    <c:if test="${not empty error}">
-        <p style="color: red;">${error}</p>
-    </c:if>
-    
-    <form method="POST" action="RegistroUsuarioServlet">
+    <form method="POST" action="RegistroUsuarioServlet" class="formulario">
         <input type="hidden" name="accion" value="agregar">
+
         <label for="usuario">Usuario:</label>
-        <input type="text" id="usuario" name="usuario" required><br><br>
+        <input type="text" id="usuario" name="usuario" required>
+
         <label for="correo">Correo electrónico:</label>
-        <input type="email" id="correo" name="correo" required><br><br>
+        <input type="email" id="correo" name="correo" required>
+
         <label for="contrasena">Contraseña:</label>
-        <input type="password" id="contrasena" name="contrasena" required><br><br>
+        <input type="password" id="contrasena" name="contrasena" required>
+
         <label for="nombre">Nombre completo:</label>
-        <input type="text" id="nombre" name="nombre" required><br><br>
+        <input type="text" id="nombre" name="nombre" required>
+
         <label for="edad">Edad:</label>
-        <input type="number" id="edad" name="edad" required><br><br>
-        <input type="submit" value="Registrar">
+        <input type="number" id="edad" name="edad" required>
+
+        <input type="submit" value="Registrar" class="boton">
     </form>
 
-    <p><a href="login.jsp">Ir al Login</a></p>
-    <p><a href="index.jsp">Volver al Inicio</a></p>
+    <p><a href="index.jsp" class="boton">Volver al Inicio</a></p>
+</div>
+
 </body>
 </html>

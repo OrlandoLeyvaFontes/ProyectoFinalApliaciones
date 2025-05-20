@@ -14,14 +14,25 @@
     List<EstadisticaJugador> lista = control.obtenerTodasEstadisticas();
 %>
 
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
     <title>Estadísticas de Jugadores</title>
+    <link rel="stylesheet" href="estadisticas.css">
 </head>
 <body>
+
+<div class="contenedor-estadisticas">
     <h1>Estadísticas de Jugadores</h1>
 
-    <table border="1" cellpadding="5" cellspacing="0">
+    <div class="boton-regresar">
+        <form action="menu.jsp" method="get">
+            <button type="submit">← Regresar al Menú</button>
+        </form>
+    </div>
+
+    <table class="tabla-estadisticas">
         <thead>
             <tr>
                 <th>Nombre</th>
@@ -50,12 +61,14 @@
                 } else {
             %>
                 <tr>
-                    <td colspan="6">No hay estadísticas para mostrar.</td>
+                    <td colspan="6" class="sin-datos">No hay estadísticas para mostrar.</td>
                 </tr>
             <%
                 }
             %>
         </tbody>
     </table>
+</div>
+
 </body>
 </html>

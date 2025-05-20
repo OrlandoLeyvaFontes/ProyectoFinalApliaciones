@@ -6,52 +6,89 @@
 
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Registrar Partido</title>
+    <title>Gestión de Partidos | Sistema Deportivo</title>
+    <link rel="stylesheet" href="partido.css"> <!-- Reutilizando el mismo CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Registrar Partido</h1>
-    <form action="RegistrarPartidoServlet" method="post">
-        <label for="equipo">Nombre del Equipo:</label>
-        <input type="text" name="equipo" required><br><br>
-
-        <label for="fecha">Fecha (yyyy-mm-dd):</label>
-        <input type="date" name="fecha" required><br><br>
-
-        <label for="rival">Nombre del Rival:</label>
-        <input type="text" name="rival" required><br><br>
-
-        <label for="lugar">Lugar:</label>
-        <input type="text" name="lugar" required><br><br>
-
-        <label for="resultado">Resultado (ej. 2-1):</label>
-        <input type="text" name="resultado" required><br><br>
-
-        <h3>Estadísticas por Jugador</h3>
-        <div>
-            <label>Nombre del Jugador:</label>
-            <input type="text" name="nombreJugador" required><br>
-
-            <label>Goles:</label>
-            <input type="number" name="goles" min="0" required><br>
-
-            <label>Asistencias:</label>
-            <input type="number" name="asistencias" min="0" required><br>
-
-            <label>Minutos Jugados:</label>
-            <input type="number" name="minutosJugados" min="0" required><br>
-
-            <label>Tarjeta Amarilla:</label>
-            <input type="checkbox" name="tarjetaAmarilla"><br>
-
-            <label>Tarjeta Roja:</label>
-            <input type="checkbox" name="tarjetaRoja"><br>
+    <div class="main-container">
+        <div class="header-section">
+            <h1><i class="fas fa-futbol"></i> Registrar Partido</h1>
+            <p>Registro de encuentros deportivos y estadísticas</p>
         </div>
 
+        <div class="form-container">
+            <div class="form-header">
+                <h3><i class="fas fa-plus-circle"></i> Nuevo Partido</h3>
+            </div>
 
-        <input type="submit" value="Registrar Partido">
-    </form>
+            <form action="RegistrarPartidoServlet" method="post" class="equipo-form">
+                <div class="form-group">
+                    <label for="equipo"><i class="fas fa-users"></i> Nombre del Equipo:</label>
+                    <input type="text" id="equipo" name="equipo" required placeholder="Equipo local">
+                </div>
+
+                <div class="form-group">
+                    <label for="rival"><i class="fas fa-user-friends"></i> Nombre del Rival:</label>
+                    <input type="text" id="rival" name="rival" required placeholder="Equipo visitante">
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha"><i class="fas fa-calendar-alt"></i> Fecha (yyyy-mm-dd):</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="lugar"><i class="fas fa-map-marker-alt"></i> Lugar:</label>
+                    <input type="text" id="lugar" name="lugar" required placeholder="Ej: Estadio Azteca">
+                </div>
+
+                <div class="form-group">
+                    <label for="resultado"><i class="fas fa-clipboard-check"></i> Resultado (ej. 2-1):</label>
+                    <input type="text" id="resultado" name="resultado" required>
+                </div>
+
+                <div class="form-header">
+                    <h3><i class="fas fa-chart-bar"></i> Estadísticas por Jugador</h3>
+                </div>
+
+                <div class="form-group">
+                    <label for="nombreJugador"><i class="fas fa-user"></i> Nombre del Jugador:</label>
+                    <input type="text" id="nombreJugador" name="nombreJugador" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="goles"><i class="fas fa-futbol"></i> Goles:</label>
+                        <input type="number" id="goles" name="goles" min="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="asistencias"><i class="fas fa-handshake"></i> Asistencias:</label>
+                        <input type="number" id="asistencias" name="asistencias" min="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="minutosJugados"><i class="fas fa-clock"></i> Minutos Jugados:</label>
+                        <input type="number" id="minutosJugados" name="minutosJugados" min="0" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label><input type="checkbox" name="tarjetaAmarilla"> Tarjeta Amarilla</label>
+                    <label><input type="checkbox" name="tarjetaRoja"> Tarjeta Roja</label>
+                </div>
+
+                <input class="btn" type="submit" value="Registrar Partido">
+            </form>
+
+            <form action="menuAdministrador.jsp" method="get">
+                <input class="btn back-btn" type="submit" value="Volver al Menú">
+            </form>
+        </div>
+    </div>
 </body>
 </html>
